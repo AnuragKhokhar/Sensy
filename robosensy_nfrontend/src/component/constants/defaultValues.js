@@ -1,4 +1,4 @@
-export const env = import.meta.env.VITE_REACT_APP_ENV || "local";
+export const env = import.meta.env.VITE_REACT_APP_ENV || "dev";
 
 let backendApi;
 
