@@ -4,7 +4,7 @@ let backendApi;
 
 switch (env) {
   case "dev":
-    backendApi = "https://sensy.onrender.com/";
+    backendApi = "https://sensy.onrender.com";
     break;
   case "prod":
     backendApi = "https://api.robosensy.in";
