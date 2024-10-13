@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+      body {
+        font-family: 'Nunito', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f7f7;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 30px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 0 20px;
+        border-bottom: 2px solid rgb(55, 55, 160);
+      }
+
+      .header-image img {
+        height: 60px;
+        width: auto;
+      }
+
+      .header-info {
+        text-align: right;
+      }
+
+      .header-info h1 {
+        color: rgb(55, 55, 160);
+        font-size: 24px;
+        margin: 0;
+      }
+
+      .header-info p {
+        margin: 2px 0;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .invoice-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        font-size: 14px;
+      }
+
+      .invoice-info div {
+        width: 48%;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+      }
+
+      .invoice-info h3 {
+        margin: 0;
+        font-size: 16px;
+        color: #333;
+        font-weight: 600;
+      }
+
+      .invoice-info p {
+        margin: 5px 0;
+        color: #666;
+      }
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+      }
+
+      .table th,
+      .table td {
+        border: 1px solid rgb(87, 87, 176);
+        padding: 8px;
+        text-align: left;
+        font-size: 14px;
+      }
+
+      .table th {
+        background-color: rgb(174, 174, 204);
+        color: rgb(87, 87, 176);
+        font-weight: 600;
+      }
+
+      .table td {
+        background-color: #fff;
+      }
+
+      .total {
+        text-align: right;
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+
+      .total h3 {
+        margin: 0;
+        font-size: 18px;
+        color: rgb(87, 87, 176);
+        font-weight: 600;
+      }
+
+      .total p {
+        margin: 5px 0;
+        color: #666;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 12px;
+        color: #999;
+      }
+
+      .footer p {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header-image">
+          <img
+            src="<%= hospital.logo %>"
+            alt="Hospital Logo"
+          />
+        </div>
+        <div class="header-info">
+          <h1><%-hospital.name%></h1>
+          <p><%-hospital.address%></p>
+          <p>Ph: <%-hospital.contactNumber%></p>
+          <p>Email: <%-hospital.email%></p>
+        </div>
+      </div>
+      <div class="invoice-info">
+        <div>
+          <h3>Billed To:</h3>
+          <p><%= customerName %></p>
+          <p><%= address %></p>
+        </div>
+        <div>
+          <h3>Invoice Details:</h3>
+          <p>Invoice Number: <%= invoiceNumber %></p>
+          <p>Invoice Date: <%= date %></p>
+        </div>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% medicines.forEach(function(medicine) { %>
+          <tr>
+            <td><%= medicine.name %></td>
+            <td><%= medicine.qty %></td>
+            <td><%= medicine.price %></td>
+            <td><%= medicine.totalAmount %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <div class="total">
+        <h3>Total Amount: <%= totalAmount %></h3>
+      </div>
+      <div class="total">
+        <h3>Discount: <%= discount %></h3>
+      </div>
+      <div class="total">
+        <h3>Net Amount: <%= finalAmount %></h3>
+      </div>
+    
+    </div>
+  </body>
+</html>
