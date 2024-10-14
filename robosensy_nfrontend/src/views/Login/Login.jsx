@@ -71,7 +71,7 @@ const SignIn = () => {
               <Input
                 name="email"
                 size="lg"
-                placeholder="name@mail.com"
+                placeholder="use superadmin@algodive.com as email to login"
                 className="!border-t-blue-gray-200 focus:!border-t-gray-900"
                 labelProps={{
                   className: "before:content-none after:content-none",
@@ -88,7 +88,7 @@ const SignIn = () => {
                 name="password"
                 type={showPasswordCheckbox ? "text" : "password"}
                 size="lg"
-                placeholder="********"
+                placeholder="use 12345678 as password"
                 className="!border-t-blue-gray-200 focus:!border-t-gray-900"
                 labelProps={{
                   className: "before:content-none after:content-none",

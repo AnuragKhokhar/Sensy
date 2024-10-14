@@ -57,18 +57,7 @@ function Navbar() {
               <li>
                 <Link to="/project">Home</Link>
               </li>
-              <li>
-                <Link to="/project">Services</Link>
-              </li>
-              <li>
-                <Link to="/project">Demo</Link>
-              </li>
-              <li>
-                <Link to="/project">Blog</Link>
-              </li>
-              <li>
-                <Link to="/project">Contact</Link>
-              </li>
+              
               <li onClick={() => navigate("/login")}>
                 <Link>SignIn/LogIn</Link>
               </li>
@@ -98,38 +87,7 @@ function Navbar() {
                     </span>
                   </Link>
                 </li>
-                <li className="list-items">
-                  <Link to="#">
-                    <IoListSharp style={{ color: "black" }} />
-                    <span className="custom-span" style={{ color: "black" }}>
-                      Services
-                    </span>
-                  </Link>
-                </li>
-                <li className="list-items">
-                  <Link to="#">
-                    <IoListSharp style={{ color: "black" }} />
-                    <span className="custom-span" style={{ color: "black" }}>
-                      Demo
-                    </span>
-                  </Link>
-                </li>
-                <li className="list-items">
-                  <Link to="#">
-                    <IoListSharp style={{ color: "black" }} />
-                    <span className="custom-span" style={{ color: "black" }}>
-                      Blog
-                    </span>
-                  </Link>
-                </li>
-                <li className="list-items">
-                  <Link to="#">
-                    <IoListSharp style={{ color: "black" }} />
-                    <span className="custom-span" style={{ color: "black" }}>
-                      Contact
-                    </span>
-                  </Link>
-                </li>
+
                 <li className="list-items" onClick={() => navigate("/login")}>
                   <Link to="#">
                     <CiLogout style={{ color: "black" }} />
